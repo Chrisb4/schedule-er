@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.7.3/fullcalendar.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.7.3/fullcalendar.print.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="javascripts/index.js" charset="utf-8"></script>
+    <script src="https://apis.google.com/js/client.js?onload=checkAuth">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.7.3/fullcalendar.js"></script>
+    </script>
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top header">
+      <div class="container"></div>
+      <ul>
+        <li>
+          <a href="/">Home</a>
+        </li>
+        <li>
+          <a href="#">About</a>
+        </li>
+        <li>
+          <a href="#">Contact</a>
+        </li>
+      </ul>
+    </nav>
+
+    <div id="authorize-div" style="display: none">
+      <span>Authorize access to Google Calendar API</span>
+      <!--Button for the user to click to initiate auth sequence -->
+      <button id="authorize-button" onclick="handleAuthClick(event)">
+        Authorize
+      </button>
+    </div>
+    <pre id="output"></pre>
+    <div class="container">
+      <form action="">
+        <button class="btn btn-info">test button</button>
+      </form>
+      <p>
+        Kickstarter pop-up lo-fi, chicharrones brunch gentrify forage cliche gastropub. Tumblr 3 wolf moon pabst locavore echo park, organic cred williamsburg 90's. Locavore occupy meditation, before they sold out four loko cornhole disrupt. Authentic hoodie actually, kinfolk tofu marfa freegan wayfarers literally hammock chambray knausgaard keytar lomo bushwick. Four dollar toast lumbersexual post-ironic bushwick, whatever letterpress typewriter 3 wolf moon normcore mumblecore slow-carb. Schlitz tilde retro celiac, small batch gochujang next level iPhone twee. 90's gochujang man bun, hella photo booth bicycle rights pour-over ugh YOLO pabst.
+        </p>
+
+      <div id="calendar">
+
+      </div>
+
+        <p>Organic kale chips cardigan freegan photo booth chartreuse. XOXO gastropub mlkshk migas art party. Readymade chartreuse offal knausgaard organic meggings. Williamsburg gentrify single-origin coffee occupy bitters, hella gluten-free viral kinfolk keffiyeh wayfarers. Deep v yr fixie squid, try-hard scenester swag sriracha listicle 90's four dollar toast cliche YOLO DIY bicycle rights. Craft beer leggings pickled cronut, readymade slow-carb celiac synth cray next level artisan YOLO asymmetrical. Organic jean shorts letterpress, scenester bespoke asymmetrical messenger bag pork belly pop-up pour-over humblebrag YOLO roof party cred.</p>
+
+        <p>Polaroid church-key ethical kitsch marfa, pour-over ugh flexitarian raw denim. Direct trade polaroid celiac, kale chips chia migas vinyl lumbersexual. Dreamcatcher fanny pack fashion axe typewriter hashtag man braid, artisan direct trade vinyl pitchfork keffiyeh chartreuse. Tofu vinyl heirloom, kale chips cardigan yr viral meh kombucha. Man bun seitan next level austin four loko pug. Meh quinoa master cleanse dreamcatcher. Chartreuse austin direct trade, kogi flannel wolf gluten-free tote bag chambray tofu blue bottle semiotics ramps seitan.</p>
+
+        <p>Brooklyn franzen helvetica keytar, tattooed cardigan fap banh mi pinterest. Readymade ugh authentic man braid austin fixie. Listicle readymade flannel, knausgaard waistcoat raw denim umami roof party forage. Sustainable stumptown thundercats salvia DIY, trust fund fanny pack poutine letterpress shabby chic 3 wolf moon deep v synth. Pinterest try-hard keytar 8-bit. VHS art party direct trade paleo chia chicharrones, post-ironic chambray pabst ennui. Food truck pitchfork humblebrag venmo, artisan paleo irony wayfarers vinyl helvetica yr PBR&B street art.</p>
+
+        <p>Sartorial tilde mlkshk next level typewriter echo park tattooed. Authentic tumblr knausgaard banjo post-ironic shabby chic. Knausgaard tousled yr, mixtape ennui single-origin coffee blog hella disrupt chambray. Narwhal lumbersexual marfa, dreamcatcher mixtape keffiyeh four dollar toast meh migas health goth artisan listicle raw denim food truck sartorial. Marfa chicharrones everyday carry cray, disrupt waistcoat twee shoreditch try-hard echo park poutine biodiesel chambray. Schlitz man bun pop-up mlkshk tote bag tattooed, occupy art party man braid. Hella everyday carry salvia, heirloom shabby chic green juice waistcoat meggings skateboard chartreuse cray. </p>
+
+        <p>Flexitarian beard umami gochujang normcore waistcoat master cleanse. Portland twee synth, art party fixie yuccie brunch kogi biodiesel franzen meh. Slow-carb kickstarter narwhal, vice XOXO franzen bicycle rights. Bespoke heirloom echo park banh mi. Thundercats bitters salvia, before they sold out XOXO gastropub church-key disrupt occupy leggings VHS drinking vinegar. 3 wolf moon everyday carry chambray bushwick hammock, trust fund chicharrones microdosing. Narwhal fixie vice banh mi locavore, keffiyeh DIY aesthetic umami you probably haven't heard of them four loko schlitz pop-up. </p>
+
+        <p>Shoreditch raw denim umami PBR&B, meh actually helvetica lo-fi venmo green juice beard williamsburg. Sriracha organic mustache, intelligentsia try-hard marfa cronut YOLO VHS gluten-free. XOXO sustainable tofu heirloom meggings taxidermy listicle. Godard sriracha messenger bag bicycle rights keffiyeh, hashtag lomo cold-pressed. Readymade offal gluten-free pinterest biodiesel lumbersexual mumblecore locavore plaid taxidermy. Tumblr fap waistcoat gochujang umami, distillery austin typewriter blog. Whatever banjo man bun synth etsy scenester.</p>
+
+    </div>
+  </body>
+</html>
