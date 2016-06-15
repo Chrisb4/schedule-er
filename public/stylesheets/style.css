@@ -12,7 +12,7 @@ body {
 }
 
 a {
-  color: #00B7FF;
+  color: black;
 }
 
 p {
@@ -26,8 +26,14 @@ p {
 }
 
 .header li {
-  display: inline;
-  padding: 30px
+  display: inline-block;;
+  padding-top: 15px;
+  padding-left: 40px;
+
+}
+
+.upcoming-appointments {
+  text-align: center;
 }
 
 .calendar-columns {

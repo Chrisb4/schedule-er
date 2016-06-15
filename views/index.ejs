@@ -24,32 +24,44 @@
         </li>
       </ul>
     </nav>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-8">
+          <div class="upcoming-appointments">
+            <h2>Please choose an appointment time.</h2>
 
-    <div class="upcoming-appointments">
-      <h2>Please choose an appointment time.</h2>
+            <div class="dates">
 
-      <div class="dates">
+            </div>
+          </div>
 
+          <div class="upcoming-appointment-form">
+            Fill out this information.
+            <form>
+              <div class="form-group">
+                <label for="inputName">Name</label>
+                <input type="text" class="form-control" id="inputName" placeholder="Name">
+              </div>
+              <div class="form-group">
+                <label for="inputEmail">Email address</label>
+                <input type="email" class="form-control" id="inputEmail" placeholder="Email">
+              </div>
+              <div class="form-group">
+                <label for="inputMessage">Please add any special requests</label>
+                <input type="text" class="form-control" id="inputMessage" placeholder="Message">
+              </div>
+              <button class="btn btn-default" type="submit">Submit</button>
+            </form>
+          </div>
+        </div>
+        <div class="col-sm-2"></div>
       </div>
     </div>
 
-    <div class="upcoming-appointment-form">
-      Fill out this information.
-    </div>
 
-    <div id="authorize-div" style="display: none">
-      <span>Authorize access to Google Calendar API</span>
-      <!--Button for the user to click to initiate auth sequence -->
-      <button id="authorize-button" onclick="handleAuthClick(event)">
-        Authorize
-      </button>
-    </div>
-    <pre id="output"></pre>
 
-      <form action="">
-        <button class="btn btn-info">test button</button>
-      </form>
-      <div class="container-fluid">
+      <!-- <div class="container-fluid">
           <div class="row">
             <div class="col-sm-2 calendar-columns cal-aa"></div>
             <div class="col-sm-1 calendar-columns cal-aa cal-11">Time</div>
@@ -290,13 +302,8 @@
             <div class="col-sm-1 calendar-columns cal-s cal-7"></div>
             <div class="col-sm-2 calendar-columns cal-s"></div>
           </div>
-      </div>
+      </div> -->
 
-      <div class="filler">
-      <p>
-        Kickstarter pop-up lo-fi, chicharrones brunch gentrify forage cliche gastropub. Tumblr 3 wolf moon pabst locavore echo park, organic cred williamsburg 90's. Locavore occupy meditation, before they sold out four loko cornhole disrupt. Authentic hoodie actually, kinfolk tofu marfa freegan wayfarers literally hammock chambray knausgaard keytar lomo bushwick. Four dollar toast lumbersexual post-ironic bushwick, whatever letterpress typewriter 3 wolf moon normcore mumblecore slow-carb. Schlitz tilde retro celiac, small batch gochujang next level iPhone twee. 90's gochujang man bun, hella photo booth bicycle rights pour-over ugh YOLO pabst.
-        </p>
-      </div>
 
 
   <script src="javascripts/upcoming-appointments.js" charset="utf-8"></script>
