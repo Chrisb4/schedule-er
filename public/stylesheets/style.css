@@ -29,3 +29,25 @@ p {
   display: inline;
   padding: 30px
 }
+
+.calendar-columns {
+  height: 20px;
+  border: 1px solid #b3b3b3;
+}
+
+.cal-11 {
+  color: #b3b3b3;
+}
+.cal-aa {
+  color: black;
+}
+.cal-g.cal-1 {
+  background-color: #d9534f;
+}
+.cal-h.cal-1 {
+  background-color: #d9534f;
+}
+
+.filler {
+  margin-top: 200px;
+}

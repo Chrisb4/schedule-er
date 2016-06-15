@@ -1,0 +1,7 @@
+- Form page
+  - Name and message fields.
+  - Post to url those fields and the date time that you sent with the url.
+- Thank you page
+  - Show after form submission
+
+- Hook up upcoming dates to a database or spreadsheet.

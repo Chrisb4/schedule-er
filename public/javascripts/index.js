@@ -1,20 +1,16 @@
 
 
-
-
-$(document).ready(function(){
-  $('#calender').fullCalendar({
-
-  })
-});
-
 // Your Client ID can be retrieved from your project in the Google
 // Developer Console, https://console.developers.google.com
 var CLIENT_ID = '128400292623-he1cp9jhevqmp6g48b76enrjrujmtei4.apps.googleusercontent.com';
 
 var SCOPES = ["https://www.googleapis.com/auth/calendar.readonly"];
 
-var session = ["test sesh"];
+var session = [];
+var date = new Date();
+console.log("this is the date: " + date);
+var now = moment();
+console.log("this is moment: " + now._d);
 
 /**
  * Check if current user has authorized this application.
@@ -83,7 +79,7 @@ function listUpcomingEvents() {
 
   request.execute(function(resp) {
     var events = resp.items;
-
+    console.log(events[2].start.dateTime);
     var start = events[2].start.dateTime.slice(11,16);
     session.push(start);
     nameSession(session);

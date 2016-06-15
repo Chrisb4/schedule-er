@@ -4,13 +4,10 @@
     <title><%= title %></title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <link rel='stylesheet' href='/stylesheets/style.css' />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.7.3/fullcalendar.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.7.3/fullcalendar.print.css">
+    <script src="javascripts/moment.min.js" charset="utf-8"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <script src="javascripts/index.js" charset="utf-8"></script>
-    <script src="https://apis.google.com/js/client.js?onload=checkAuth">
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.7.3/fullcalendar.js"></script>
-    </script>
+    <script src="https://apis.google.com/js/client.js?onload=checkAuth"></script>
   </head>
   <body>
     <nav class="navbar navbar-default navbar-fixed-top header">
@@ -28,6 +25,18 @@
       </ul>
     </nav>
 
+    <div class="upcoming-appointments">
+      <h2>Please choose an appointment time.</h2>
+
+      <div class="dates">
+
+      </div>
+    </div>
+
+    <div class="upcoming-appointment-form">
+      Fill out this information.
+    </div>
+
     <div id="authorize-div" style="display: none">
       <span>Authorize access to Google Calendar API</span>
       <!--Button for the user to click to initiate auth sequence -->
@@ -36,30 +45,260 @@
       </button>
     </div>
     <pre id="output"></pre>
-    <div class="container">
+
       <form action="">
         <button class="btn btn-info">test button</button>
       </form>
+      <div class="container-fluid">
+          <div class="row">
+            <div class="col-sm-2 calendar-columns cal-aa"></div>
+            <div class="col-sm-1 calendar-columns cal-aa cal-11">Time</div>
+            <div class="col-sm-1 calendar-columns cal-aa cal-1">Monday</div>
+            <div class="col-sm-1 calendar-columns cal-aa cal-2">Tuesday</div>
+            <div class="col-sm-1 calendar-columns cal-aa cal-3">Wednesday</div>
+            <div class="col-sm-1 calendar-columns cal-aa cal-4">Thursday</div>
+            <div class="col-sm-1 calendar-columns cal-aa cal-5">Friday</div>
+            <div class="col-sm-1 calendar-columns cal-aa cal-6">Saturday</div>
+            <div class="col-sm-1 calendar-columns cal-aa cal-7">Sunday</div>
+            <div class="col-sm-2 calendar-columns cal-aa"></div>
+          </div>
+          <div class="row">
+            <div class="col-sm-2 calendar-columns cal-a"></div>
+            <div class="col-sm-1 calendar-columns cal-a cal-11">9:00</div>
+            <div class="col-sm-1 calendar-columns cal-a cal-1"></div>
+            <div class="col-sm-1 calendar-columns cal-a cal-2"></div>
+            <div class="col-sm-1 calendar-columns cal-a cal-3"></div>
+            <div class="col-sm-1 calendar-columns cal-a cal-4"></div>
+            <div class="col-sm-1 calendar-columns cal-a cal-5"></div>
+            <div class="col-sm-1 calendar-columns cal-a cal-6"></div>
+            <div class="col-sm-1 calendar-columns cal-a cal-7"></div>
+            <div class="col-sm-2 calendar-columns cal-a"></div>
+          </div>
+          <div class="row">
+            <div class="col-sm-2 calendar-columns cal-b"></div>
+            <div class="col-sm-1 calendar-columns cal-b cal-11">9:30</div>
+            <div class="col-sm-1 calendar-columns cal-b cal-1"></div>
+            <div class="col-sm-1 calendar-columns cal-b cal-2"></div>
+            <div class="col-sm-1 calendar-columns cal-b cal-3"></div>
+            <div class="col-sm-1 calendar-columns cal-b cal-4"></div>
+            <div class="col-sm-1 calendar-columns cal-b cal-5"></div>
+            <div class="col-sm-1 calendar-columns cal-b cal-6"></div>
+            <div class="col-sm-1 calendar-columns cal-b cal-7"></div>
+            <div class="col-sm-2 calendar-columns cal-b"></div>
+          </div>
+          <div class="row">
+            <div class="col-sm-2 calendar-columns cal-c"></div>
+            <div class="col-sm-1 calendar-columns cal-c cal-11">10:00</div>
+            <div class="col-sm-1 calendar-columns cal-c cal-1"></div>
+            <div class="col-sm-1 calendar-columns cal-c cal-2"></div>
+            <div class="col-sm-1 calendar-columns cal-c cal-3"></div>
+            <div class="col-sm-1 calendar-columns cal-c cal-4"></div>
+            <div class="col-sm-1 calendar-columns cal-c cal-5"></div>
+            <div class="col-sm-1 calendar-columns cal-c cal-6"></div>
+            <div class="col-sm-1 calendar-columns cal-c cal-7"></div>
+            <div class="col-sm-2 calendar-columns cal-c"></div>
+          </div>
+          <div class="row">
+            <div class="col-sm-2 calendar-columns cal-d"></div>
+            <div class="col-sm-1 calendar-columns cal-d cal-11">10:30</div>
+            <div class="col-sm-1 calendar-columns cal-d cal-1"></div>
+            <div class="col-sm-1 calendar-columns cal-d cal-2"></div>
+            <div class="col-sm-1 calendar-columns cal-d cal-3"></div>
+            <div class="col-sm-1 calendar-columns cal-d cal-4"></div>
+            <div class="col-sm-1 calendar-columns cal-d cal-5"></div>
+            <div class="col-sm-1 calendar-columns cal-d cal-6"></div>
+            <div class="col-sm-1 calendar-columns cal-d cal-7"></div>
+            <div class="col-sm-2 calendar-columns cal-d"></div>
+          </div>
+          <div class="row">
+            <div class="col-sm-2 calendar-columns cal-e"></div>
+            <div class="col-sm-1 calendar-columns cal-e cal-11">11:00</div>
+            <div class="col-sm-1 calendar-columns cal-e cal-1"></div>
+            <div class="col-sm-1 calendar-columns cal-e cal-2"></div>
+            <div class="col-sm-1 calendar-columns cal-e cal-3"></div>
+            <div class="col-sm-1 calendar-columns cal-e cal-4"></div>
+            <div class="col-sm-1 calendar-columns cal-e cal-5"></div>
+            <div class="col-sm-1 calendar-columns cal-e cal-6"></div>
+            <div class="col-sm-1 calendar-columns cal-e cal-7"></div>
+            <div class="col-sm-2 calendar-columns cal-e"></div>
+          </div>
+          <div class="row">
+            <div class="col-sm-2 calendar-columns cal-f"></div>
+            <div class="col-sm-1 calendar-columns cal-f cal-11">11:30</div>
+            <div class="col-sm-1 calendar-columns cal-f cal-1"></div>
+            <div class="col-sm-1 calendar-columns cal-f cal-2"></div>
+            <div class="col-sm-1 calendar-columns cal-f cal-3"></div>
+            <div class="col-sm-1 calendar-columns cal-f cal-4"></div>
+            <div class="col-sm-1 calendar-columns cal-f cal-5"></div>
+            <div class="col-sm-1 calendar-columns cal-f cal-6"></div>
+            <div class="col-sm-1 calendar-columns cal-f cal-7"></div>
+            <div class="col-sm-2 calendar-columns cal-f"></div>
+          </div>
+          <div class="row">
+            <div class="col-sm-2 calendar-columns cal-g"></div>
+            <div class="col-sm-1 calendar-columns cal-g cal-11">12:00</div>
+            <div class="col-sm-1 calendar-columns cal-g cal-1"></div>
+            <div class="col-sm-1 calendar-columns cal-g cal-2"></div>
+            <div class="col-sm-1 calendar-columns cal-g cal-3"></div>
+            <div class="col-sm-1 calendar-columns cal-g cal-4"></div>
+            <div class="col-sm-1 calendar-columns cal-g cal-5"></div>
+            <div class="col-sm-1 calendar-columns cal-g cal-6"></div>
+            <div class="col-sm-1 calendar-columns cal-g cal-7"></div>
+            <div class="col-sm-2 calendar-columns cal-g"></div>
+          </div>
+          <div class="row">
+            <div class="col-sm-2 calendar-columns cal-h"></div>
+            <div class="col-sm-1 calendar-columns cal-h cal-11">12:30</div>
+            <div class="col-sm-1 calendar-columns cal-h cal-1"></div>
+            <div class="col-sm-1 calendar-columns cal-h cal-2"></div>
+            <div class="col-sm-1 calendar-columns cal-h cal-3"></div>
+            <div class="col-sm-1 calendar-columns cal-h cal-4"></div>
+            <div class="col-sm-1 calendar-columns cal-h cal-5"></div>
+            <div class="col-sm-1 calendar-columns cal-h cal-6"></div>
+            <div class="col-sm-1 calendar-columns cal-h cal-7"></div>
+            <div class="col-sm-2 calendar-columns cal-h"></div>
+          </div>
+          <div class="row">
+            <div class="col-sm-2 calendar-columns cal-i"></div>
+            <div class="col-sm-1 calendar-columns cal-i cal-11">1:00</div>
+            <div class="col-sm-1 calendar-columns cal-i cal-1"></div>
+            <div class="col-sm-1 calendar-columns cal-i cal-2"></div>
+            <div class="col-sm-1 calendar-columns cal-i cal-3"></div>
+            <div class="col-sm-1 calendar-columns cal-i cal-4"></div>
+            <div class="col-sm-1 calendar-columns cal-i cal-5"></div>
+            <div class="col-sm-1 calendar-columns cal-i cal-6"></div>
+            <div class="col-sm-1 calendar-columns cal-i cal-7"></div>
+            <div class="col-sm-2 calendar-columns cal-i"></div>
+          </div>
+          <div class="row">
+            <div class="col-sm-2 calendar-columns cal-j"></div>
+            <div class="col-sm-1 calendar-columns cal-j cal-11">1:30</div>
+            <div class="col-sm-1 calendar-columns cal-j cal-1"></div>
+            <div class="col-sm-1 calendar-columns cal-j cal-2"></div>
+            <div class="col-sm-1 calendar-columns cal-j cal-3"></div>
+            <div class="col-sm-1 calendar-columns cal-j cal-4"></div>
+            <div class="col-sm-1 calendar-columns cal-j cal-5"></div>
+            <div class="col-sm-1 calendar-columns cal-j cal-6"></div>
+            <div class="col-sm-1 calendar-columns cal-j cal-7"></div>
+            <div class="col-sm-2 calendar-columns cal-j"></div>
+          </div>
+          <div class="row">
+            <div class="col-sm-2 calendar-columns cal-k"></div>
+            <div class="col-sm-1 calendar-columns cal-k cal-11">2:00</div>
+            <div class="col-sm-1 calendar-columns cal-k cal-1"></div>
+            <div class="col-sm-1 calendar-columns cal-k cal-2"></div>
+            <div class="col-sm-1 calendar-columns cal-k cal-3"></div>
+            <div class="col-sm-1 calendar-columns cal-k cal-4"></div>
+            <div class="col-sm-1 calendar-columns cal-k cal-5"></div>
+            <div class="col-sm-1 calendar-columns cal-k cal-6"></div>
+            <div class="col-sm-1 calendar-columns cal-k cal-7"></div>
+            <div class="col-sm-2 calendar-columns cal-k"></div>
+          </div>
+          <div class="row">
+            <div class="col-sm-2 calendar-columns cal-l"></div>
+            <div class="col-sm-1 calendar-columns cal-l cal-11">2:30</div>
+            <div class="col-sm-1 calendar-columns cal-l cal-1"></div>
+            <div class="col-sm-1 calendar-columns cal-l cal-2"></div>
+            <div class="col-sm-1 calendar-columns cal-l cal-3"></div>
+            <div class="col-sm-1 calendar-columns cal-l cal-4"></div>
+            <div class="col-sm-1 calendar-columns cal-l cal-5"></div>
+            <div class="col-sm-1 calendar-columns cal-l cal-6"></div>
+            <div class="col-sm-1 calendar-columns cal-l cal-7"></div>
+            <div class="col-sm-2 calendar-columns cal-l"></div>
+          </div>
+          <div class="row">
+            <div class="col-sm-2 calendar-columns cal-m"></div>
+            <div class="col-sm-1 calendar-columns cal-m cal-11">3:00</div>
+            <div class="col-sm-1 calendar-columns cal-m cal-1"></div>
+            <div class="col-sm-1 calendar-columns cal-m cal-2"></div>
+            <div class="col-sm-1 calendar-columns cal-m cal-3"></div>
+            <div class="col-sm-1 calendar-columns cal-m cal-4"></div>
+            <div class="col-sm-1 calendar-columns cal-m cal-5"></div>
+            <div class="col-sm-1 calendar-columns cal-m cal-6"></div>
+            <div class="col-sm-1 calendar-columns cal-m cal-7"></div>
+            <div class="col-sm-2 calendar-columns cal-m"></div>
+          </div>
+          <div class="row">
+            <div class="col-sm-2 calendar-columns cal-n"></div>
+            <div class="col-sm-1 calendar-columns cal-n cal-11">3:30</div>
+            <div class="col-sm-1 calendar-columns cal-n cal-1"></div>
+            <div class="col-sm-1 calendar-columns cal-n cal-2"></div>
+            <div class="col-sm-1 calendar-columns cal-n cal-3"></div>
+            <div class="col-sm-1 calendar-columns cal-n cal-4"></div>
+            <div class="col-sm-1 calendar-columns cal-n cal-5"></div>
+            <div class="col-sm-1 calendar-columns cal-n cal-6"></div>
+            <div class="col-sm-1 calendar-columns cal-n cal-7"></div>
+            <div class="col-sm-2 calendar-columns cal-n"></div>
+          </div>
+          <div class="row">
+            <div class="col-sm-2 calendar-columns cal-o"></div>
+            <div class="col-sm-1 calendar-columns cal-o cal-11">4:30</div>
+            <div class="col-sm-1 calendar-columns cal-o cal-1"></div>
+            <div class="col-sm-1 calendar-columns cal-o cal-2"></div>
+            <div class="col-sm-1 calendar-columns cal-o cal-3"></div>
+            <div class="col-sm-1 calendar-columns cal-o cal-4"></div>
+            <div class="col-sm-1 calendar-columns cal-o cal-5"></div>
+            <div class="col-sm-1 calendar-columns cal-o cal-6"></div>
+            <div class="col-sm-1 calendar-columns cal-o cal-7"></div>
+            <div class="col-sm-2 calendar-columns cal-o"></div>
+          </div>
+          <div class="row">
+            <div class="col-sm-2 calendar-columns cal-p"></div>
+            <div class="col-sm-1 calendar-columns cal-p cal-11">5:00</div>
+            <div class="col-sm-1 calendar-columns cal-p cal-1"></div>
+            <div class="col-sm-1 calendar-columns cal-p cal-2"></div>
+            <div class="col-sm-1 calendar-columns cal-p cal-3"></div>
+            <div class="col-sm-1 calendar-columns cal-p cal-4"></div>
+            <div class="col-sm-1 calendar-columns cal-p cal-5"></div>
+            <div class="col-sm-1 calendar-columns cal-p cal-6"></div>
+            <div class="col-sm-1 calendar-columns cal-p cal-7"></div>
+            <div class="col-sm-2 calendar-columns cal-p"></div>
+          </div>
+          <div class="row">
+            <div class="col-sm-2 calendar-columns cal-q"></div>
+            <div class="col-sm-1 calendar-columns cal-q cal-11">5:30</div>
+            <div class="col-sm-1 calendar-columns cal-q cal-1"></div>
+            <div class="col-sm-1 calendar-columns cal-q cal-2"></div>
+            <div class="col-sm-1 calendar-columns cal-q cal-3"></div>
+            <div class="col-sm-1 calendar-columns cal-q cal-4"></div>
+            <div class="col-sm-1 calendar-columns cal-q cal-5"></div>
+            <div class="col-sm-1 calendar-columns cal-q cal-6"></div>
+            <div class="col-sm-1 calendar-columns cal-q cal-7"></div>
+            <div class="col-sm-2 calendar-columns cal-q"></div>
+          </div>
+          <div class="row">
+            <div class="col-sm-2 calendar-columns cal-r"></div>
+            <div class="col-sm-1 calendar-columns cal-r cal-11">6:00</div>
+            <div class="col-sm-1 calendar-columns cal-r cal-1"></div>
+            <div class="col-sm-1 calendar-columns cal-r cal-2"></div>
+            <div class="col-sm-1 calendar-columns cal-r cal-3"></div>
+            <div class="col-sm-1 calendar-columns cal-r cal-4"></div>
+            <div class="col-sm-1 calendar-columns cal-r cal-5"></div>
+            <div class="col-sm-1 calendar-columns cal-r cal-6"></div>
+            <div class="col-sm-1 calendar-columns cal-r cal-7"></div>
+            <div class="col-sm-2 calendar-columns cal-r"></div>
+          </div>
+          <div class="row">
+            <div class="col-sm-2 calendar-columns cal-s"></div>
+            <div class="col-sm-1 calendar-columns cal-s cal-11">6:30</div>
+            <div class="col-sm-1 calendar-columns cal-s cal-1"></div>
+            <div class="col-sm-1 calendar-columns cal-s cal-2"></div>
+            <div class="col-sm-1 calendar-columns cal-s cal-3"></div>
+            <div class="col-sm-1 calendar-columns cal-s cal-4"></div>
+            <div class="col-sm-1 calendar-columns cal-s cal-5"></div>
+            <div class="col-sm-1 calendar-columns cal-s cal-6"></div>
+            <div class="col-sm-1 calendar-columns cal-s cal-7"></div>
+            <div class="col-sm-2 calendar-columns cal-s"></div>
+          </div>
+      </div>
+
+      <div class="filler">
       <p>
         Kickstarter pop-up lo-fi, chicharrones brunch gentrify forage cliche gastropub. Tumblr 3 wolf moon pabst locavore echo park, organic cred williamsburg 90's. Locavore occupy meditation, before they sold out four loko cornhole disrupt. Authentic hoodie actually, kinfolk tofu marfa freegan wayfarers literally hammock chambray knausgaard keytar lomo bushwick. Four dollar toast lumbersexual post-ironic bushwick, whatever letterpress typewriter 3 wolf moon normcore mumblecore slow-carb. Schlitz tilde retro celiac, small batch gochujang next level iPhone twee. 90's gochujang man bun, hella photo booth bicycle rights pour-over ugh YOLO pabst.
         </p>
-
-      <div id="calendar">
-
       </div>
 
-        <p>Organic kale chips cardigan freegan photo booth chartreuse. XOXO gastropub mlkshk migas art party. Readymade chartreuse offal knausgaard organic meggings. Williamsburg gentrify single-origin coffee occupy bitters, hella gluten-free viral kinfolk keffiyeh wayfarers. Deep v yr fixie squid, try-hard scenester swag sriracha listicle 90's four dollar toast cliche YOLO DIY bicycle rights. Craft beer leggings pickled cronut, readymade slow-carb celiac synth cray next level artisan YOLO asymmetrical. Organic jean shorts letterpress, scenester bespoke asymmetrical messenger bag pork belly pop-up pour-over humblebrag YOLO roof party cred.</p>
 
-        <p>Polaroid church-key ethical kitsch marfa, pour-over ugh flexitarian raw denim. Direct trade polaroid celiac, kale chips chia migas vinyl lumbersexual. Dreamcatcher fanny pack fashion axe typewriter hashtag man braid, artisan direct trade vinyl pitchfork keffiyeh chartreuse. Tofu vinyl heirloom, kale chips cardigan yr viral meh kombucha. Man bun seitan next level austin four loko pug. Meh quinoa master cleanse dreamcatcher. Chartreuse austin direct trade, kogi flannel wolf gluten-free tote bag chambray tofu blue bottle semiotics ramps seitan.</p>
-
-        <p>Brooklyn franzen helvetica keytar, tattooed cardigan fap banh mi pinterest. Readymade ugh authentic man braid austin fixie. Listicle readymade flannel, knausgaard waistcoat raw denim umami roof party forage. Sustainable stumptown thundercats salvia DIY, trust fund fanny pack poutine letterpress shabby chic 3 wolf moon deep v synth. Pinterest try-hard keytar 8-bit. VHS art party direct trade paleo chia chicharrones, post-ironic chambray pabst ennui. Food truck pitchfork humblebrag venmo, artisan paleo irony wayfarers vinyl helvetica yr PBR&B street art.</p>
-
-        <p>Sartorial tilde mlkshk next level typewriter echo park tattooed. Authentic tumblr knausgaard banjo post-ironic shabby chic. Knausgaard tousled yr, mixtape ennui single-origin coffee blog hella disrupt chambray. Narwhal lumbersexual marfa, dreamcatcher mixtape keffiyeh four dollar toast meh migas health goth artisan listicle raw denim food truck sartorial. Marfa chicharrones everyday carry cray, disrupt waistcoat twee shoreditch try-hard echo park poutine biodiesel chambray. Schlitz man bun pop-up mlkshk tote bag tattooed, occupy art party man braid. Hella everyday carry salvia, heirloom shabby chic green juice waistcoat meggings skateboard chartreuse cray. </p>
-
-        <p>Flexitarian beard umami gochujang normcore waistcoat master cleanse. Portland twee synth, art party fixie yuccie brunch kogi biodiesel franzen meh. Slow-carb kickstarter narwhal, vice XOXO franzen bicycle rights. Bespoke heirloom echo park banh mi. Thundercats bitters salvia, before they sold out XOXO gastropub church-key disrupt occupy leggings VHS drinking vinegar. 3 wolf moon everyday carry chambray bushwick hammock, trust fund chicharrones microdosing. Narwhal fixie vice banh mi locavore, keffiyeh DIY aesthetic umami you probably haven't heard of them four loko schlitz pop-up. </p>
-
-        <p>Shoreditch raw denim umami PBR&B, meh actually helvetica lo-fi venmo green juice beard williamsburg. Sriracha organic mustache, intelligentsia try-hard marfa cronut YOLO VHS gluten-free. XOXO sustainable tofu heirloom meggings taxidermy listicle. Godard sriracha messenger bag bicycle rights keffiyeh, hashtag lomo cold-pressed. Readymade offal gluten-free pinterest biodiesel lumbersexual mumblecore locavore plaid taxidermy. Tumblr fap waistcoat gochujang umami, distillery austin typewriter blog. Whatever banjo man bun synth etsy scenester.</p>
-
-    </div>
+  <script src="javascripts/upcoming-appointments.js" charset="utf-8"></script>
   </body>
 </html>
