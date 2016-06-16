@@ -12,8 +12,8 @@ var users = require('./routes/users');
 
 var app = express();
 // Mongoose configuration
-// var mongoose = require('mongoose');
-// mongoose.connect(process.env.DB_CONN_MONGO_MADNESS);
+var mongoose = require('mongoose');
+mongoose.connect(process.env.DB_CONN_APPOINTMENTS);
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

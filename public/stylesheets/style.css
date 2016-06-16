@@ -31,10 +31,36 @@ p {
   padding-left: 40px;
 
 }
-
+.intro  {
+  letter-spacing: 0.2em;
+  height: 500px;
+  margin-top: 50px;
+  border: 1px solid black;
+}
+.text-format {
+  letter-spacing: 0.2em;
+}
+.indent {
+  padding-left: 30px;
+}
 .upcoming-appointments {
   text-align: center;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .calendar-columns {
   height: 20px;

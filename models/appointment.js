@@ -1,10 +1,10 @@
 var mongoose = require("mongoose");
 
 var appointmentSchema = {
-  startTime: String,
-  clientName: String,
-  clientEmail: String,
-  massageType: String
+  fullName: String,
+  email: String,
+  message: String,
+  time: String
 };
 
 var Appointment = mongoose.model("Appointment", appointmentSchema);
